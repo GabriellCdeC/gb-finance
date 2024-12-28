@@ -1,13 +1,9 @@
-
-
-import { getCatFact } from "@/src/api/api";
+import ApiKeyForm from "@/src/components/apiKey-form";
 
 export default async function Home() {
-  const catFact = await getCatFact();
-
   return (
-    <main className="">
-      <p>{catFact.fact}</p>
+    <main className="size-full flex items-center justify-center min-h-screen">
+      <ApiKeyForm />
     </main>
   );
 }

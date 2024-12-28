@@ -4,9 +4,9 @@ const api = axios.create({
   baseURL: "https://catfact.ninja",
 });
 
-const getCatFact = async () => {
+const login = async (apiKey: string) => {
   const response = await api
-    .get("/fact")
+    .post("/login", { apiKey })
     .then((res) => res.data)
     .catch((err) => {
       console.log(err);
@@ -15,4 +15,4 @@ const getCatFact = async () => {
   return response;
 };
 
-export { getCatFact };
+export { login };
